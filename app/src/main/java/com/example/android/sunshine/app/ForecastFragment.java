@@ -317,5 +317,13 @@ public class ForecastFragment extends Fragment {
                 // New data is back from the server.  Hooray!
             }
         }
+        protected void onPoseExecute(String[] result){
+            if(result!=null){
+                mForecastAdapter.clear();
+                for(String dayForecastStr:result){
+                    mForecastAdapter.add(dayForecastStr);
+                }
+            }
+        }
     }
 }
